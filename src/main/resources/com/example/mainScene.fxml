@@ -32,7 +32,7 @@
       <Button layoutX="89.0" layoutY="327.0" mnemonicParsing="false" onAction="#onClickModifyButton" text="Módosít" />
       <Button layoutX="158.0" layoutY="327.0" mnemonicParsing="false" onAction="#onClickDeleteButton" text="Töröl" />
       <Button layoutX="77.0" layoutY="364.0" mnemonicParsing="false" onAction="#onClickAboutButton" text="Névjegy" />
-      <TableView fx:id="raceTable" layoutX="216.0" layoutY="15.0" prefHeight="374.0" prefWidth="373.0">
+      <TableView fx:id="racerTable" layoutX="216.0" layoutY="15.0" prefHeight="374.0" prefWidth="373.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="43.0" text="Id" />
           <TableColumn fx:id="nameCol" prefWidth="107.0" text="Név" />
