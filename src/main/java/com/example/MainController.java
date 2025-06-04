@@ -38,6 +38,9 @@ public class MainController {
 
     @FXML
     private TextField idField;
+    
+    @FXML
+    private RadioButton juniorRadio;
 
     @FXML
     private TableColumn<Racer, String> nameCol;
@@ -65,17 +68,37 @@ public class MainController {
     @FXML
     void onClickAddButton(ActionEvent event) {
         Racer racer = new Racer();
+        racer.setId(generateId());
         racer.setName(nameField.getText());
         racer.setBirth(birthPicker.getValue());
         String cat = ((RadioButton) category.getSelectedToggle()).getId();
         racer.setCategory(cat);
         racer.setAbsolute(absoluteCheck.isSelected());
         racerTable.getItems().add(racer);
+        clearFields();
+    }
+
+    private int generateId() {
+        if(racerTable.getItems().size() > 0){
+            int size = racerTable.getItems().size();
+            Racer racer = racerTable.getItems().get(size - 1);
+            int lastRacerId = racer.getId();
+            return lastRacerId + 1;
+        }
+        return 1;
+    }
+
+    private void clearFields() {
+        nameField.clear();
+        birthPicker.setValue(null);
+        absoluteCheck.setSelected(false);
+        juniorRadio.setSelected(true);
     }
 
     @FXML
     void onClickDeleteButton(ActionEvent event) {
-
+        int index = racerTable.getSelectionModel().getSelectedIndex();
+        racerTable.getItems().remove(index);
     }
 
     @FXML

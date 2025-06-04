@@ -1,5 +1,3 @@
-TODO: A hozzáadás nem generál id-t
-TODO: A hozzáadás után nem törli a mezőket
 TODO: Módosítás
-TODO: Törlés
 TODO: Névjegy
+TODO: Weboldalon versenyzők megjelenítése reszponzív táblázatban
